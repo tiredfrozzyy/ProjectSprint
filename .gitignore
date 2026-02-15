@@ -1,2 +1,22 @@
-.idea
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environment ---
+.venv/
+venv/
+env/
+
+# --- Environment Variables (СЕКРЕТЫ!) ---
 .env
+.env.local
+
+# --- PyCharm (настройки редактора) ---
+.idea/
+
+# --- macOS (системный мусор) ---
+.DS_Store
+
+# --- Docker (если есть локальные данные) ---
+postgres_data/
