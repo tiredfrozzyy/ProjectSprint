@@ -8,7 +8,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U sprint_user -d sprint_db" ]
+      test: [ "CMD-SHELL", "pg_isready -U projectsprint_user -d projectsprint_db" ]
       interval: 5s
       timeout: 5s
       retries: 5
