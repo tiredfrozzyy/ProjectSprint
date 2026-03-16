@@ -1,5 +1,5 @@
 from flask import Flask
-from projects_tasks.config import Config
+from config import Config
 from projects_tasks.models.models import db
 from projects_tasks.routes.tasks import task_bp
 from projects_tasks.routes.projects import project_bp

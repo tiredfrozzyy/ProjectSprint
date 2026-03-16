@@ -23,8 +23,11 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     description = db.Column(db.Text)
+    department_name = db.Column(db.String(100))
+    responsible = db.Column(db.String(100))
+    list_participants = db.Column(db.Text)
+    priority = db.Column(db.String(100))
     progress = db.Column(db.Integer)
-    deadline = db.Column(db.String(50))
 
     column_id = db.Column(db.Integer, db.ForeignKey("column.id"))
     project_id = db.Column(db.Integer, db.ForeignKey("project.id"))
