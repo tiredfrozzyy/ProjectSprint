@@ -1,8 +1,7 @@
-fastapi
-uvicorn
-sqlalchemy
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-JWT-Extended
 psycopg2-binary
-pydantic
-fpdf2
-python-multipart
 python-dotenv
+filetype

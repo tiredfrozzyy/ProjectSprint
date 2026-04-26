@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:latest
+    image: postgres:alpine
     volumes:
       - postgres_data:/var/lib/postgresql
     env_file:
@@ -12,19 +12,21 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    restart: always
 
-  web:
-    build: .
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+  backend:
+    build: ./
+    command: python app/app.py
     volumes:
-      - .:/code
+      - ./:/code
     ports:
-      - "8000:8000"
+      - "8080:8080"
     env_file:
-      - .env
+      - ./.env
     depends_on:
       db:
         condition: service_healthy
+    restart: always
 
 volumes:
   postgres_data:
